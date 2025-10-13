@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starling's Coffee - Menu</title>
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@400;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="nav-left">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Logo Starbucks" class="logo">
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="menu.html" class="active">MENU</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
+                    <svg id="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="display:none;"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.64 5.64c.39.39 1.02.39 1.41 0s.39-1.02 0-1.41L5.64 2.81c-.39-.39-1.02-.39-1.41 0s-.39 1.02 0 1.41L5.64 5.64zm12.73 12.73c.39.39 1.02.39 1.41 0s.39-1.02 0-1.41l-1.41-1.41c-.39-.39-1.02-.39-1.41 0s-.39 1.02 0 1.41l1.41 1.41zM2.81 18.36c.39.39 1.02.39 1.41 0l1.41-1.41c.39-.39.39-1.02 0-1.41s-1.02-.39-1.41 0L2.81 16.95c-.39.39-.39 1.02 0 1.41zm12.73-12.73c.39.39 1.02.39 1.41 0l1.41-1.41c.39-.39.39-1.02 0-1.41s-1.02-.39-1.41 0l-1.41 1.41c-.39.39-.39 1.02 0 1.41z"/></svg>
+                    <svg id="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.37 5.51A7.35 7.35 0 009 6c0 4.42 3.58 8 8 8 .34 0 .68-.02 1.01-.07C15.93 18.6 12.69 21 9 21c-4.97 0-9-4.03-9-9s4.03-9 9-9c.69 0 1.36.08 2 .24-.55.94-1.2 2.06-2.63 4.27z"/></svg>
+                </button>
+                <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Konten Halaman Menu -->
+    <main>
+        <div class="container">
+            <div class="content-page">
+                <h1>Menu Kami</h1>
+                <p>Jelajahi minuman dan makanan favorit yang dibuat dengan bahan-bahan terbaik.</p>
+
+                <h2 class="menu-category">Minuman Unggulan</h2>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <img src="images/menu-latte.webp" alt="Caffè Latte">
+                        <h3>Caffè Latte</h3>
+                        <p>Espresso kaya rasa dengan susu steam dan lapisan busa tipis.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="images/menu-macchiato.webp" alt="Caramel Macchiato">
+                        <h3>Caramel Macchiato</h3>
+                        <p>Espresso dengan sirup vanila, susu steam, dan saus karamel.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="images/choc-frap.webp" alt="Java Chip Frappuccino">
+                        <h3>Chocolate Chip Frappuccino</h3>
+                        <p>Kopi, susu, saus moka, dan butiran cokelat diblender dengan es.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="images/menu-green-tea.webp" alt="Iced Green Tea Latte">
+                        <h3>Iced Green Tea Latte</h3>
+                        <p>Teh hijau matcha yang lembut dicampur dengan susu dan es.</p>
+                    </div>
+                     <div class="menu-item">
+                        <img src="images/menu-cold-brew.webp" alt="Cold Brew">
+                        <h3>Cold Brew</h3>
+                        <p>Kopi yang diseduh lambat dalam air dingin selama 20 jam.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="images/menu-chocolate.webp" alt="Signature Chocolate">
+                        <h3>Signature Chocolate</h3>
+                        <p>Minuman cokelat premium yang lembut, disajikan panas atau dingin.</p>
+                    </div>
+                     <div class="menu-item">
+                        <img src="images/menu-dolce-latte.webp" alt="Asian Dolce Latte">
+                        <h3>Asian Dolce Latte</h3>
+                        <p>Espresso dengan saus dolce spesial untuk rasa yang khas.</p>
+                    </div>
+                     <div class="menu-item">
+                        <img src="images/menu-lemon-tea.webp" alt="Iced Shaken Lemon Tea">
+                        <h3>Iced Shaken Lemon Tea</h3>
+                        <p>Teh hitam dengan perasan lemon segar yang dikocok dengan es.</p>
+                    </div>
+                </div>
+
+                <h2 class="menu-category">Makanan & Pastry</h2>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <img src="images/food-croissant.webp" alt="Butter Croissant">
+                        <h3>Butter Croissant</h3>
+                        <p>Pastry klasik dari Perancis dengan tekstur lembut dan rasa mentega.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="images/food-almond-croissant.webp"Almond Croissant">
+                        <h3>Almond Croissant</h3>
+                        <p>Croissant dengan isian pasta almon manis dan taburan almon renyah.</p>
+                    </div>
+                     <div class="menu-item">
+                        <img src="images/food-tuna-puff.webp" alt="Tuna Puff Pastry">
+                        <h3>Tuna Puff Pastry</h3>
+                        <p>Pastry gurih renyah dengan isian tuna dan bumbu spesial.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="images/food-muffin.webp" alt="Blueberry Muffin">
+                        <h3>Blueberry Muffin</h3>
+                        <p>Muffin yang lembut dan padat dengan buah bluberi asli.</p>
+                    </div>
+                     <div class="menu-item">
+                        <img src="images/food-cheesecake.webp" alt="New York Cheesecake">
+                        <h3>New York Cheesecake</h3>
+                        <p>Kue keju klasik dengan tekstur padat, lembut, dan kaya rasa.</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="images/food-red-velvet.webp" alt="Red Velvet Cake">
+                        <h3>Red Velvet Cake</h3>
+                        <p>Kue Red Velvet berlapis dengan krim keju yang mewah.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer-layout">
+        <div class="footer-social">
+            <a href="http://facebook.com/starlingcoffee" aria-label="Facebook"><img src="images/icons/facebook.svg" alt="Facebook icon"></a>
+            <a href="http://instagram.com/starlingcoffee" aria-label="Instagram"><img src="images/icons/instagram.svg" alt="Instagram icon"></a>
+            <a href="https://x.com/starlingcoffee" target="_blank" aria-label="X"><img src="images/icons/twitter.svg" alt="X icon"></a>
+        </div>
+        <div class="footer-legal">
+            <p>&copy; 2025 Starling's Coffee.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
