@@ -44,4 +44,4 @@ Website ini menggunakan JavaScript (`script.js`) untuk fungsionalitas berikut:
 *   **Slider Gambar (index.html):** Membuat animasi slider pada halaman beranda.
 *   **Dark Mode Toggle:** Mengaktifkan/menonaktifkan dark mode pada website.
 *   **Menu Mobile:** Membuat menu navigasi pada tampilan mobile.
-\ No newline at end of file
+
