@@ -118,6 +118,37 @@ body.dark-mode .btn-secondary { color: var(--card-text-dark); border-color: var(
 }
 
 /* Halaman Menu */
+.search-container {
+    margin: 2rem 0;
+}
+
+.search-input {
+    width: 100%;
+    max-width: 500px;
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 50px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--active-color);
+    box-shadow: 0 0 0 2px rgba(0, 117, 74, 0.1);
+}
+
+.search-input::placeholder {
+    color: var(--text-color);
+    opacity: 0.6;
+}
+
+.menu-item.hidden {
+    display: none;
+}
+
 .menu-category {
     font-family: 'Oswald', sans-serif;
     font-size: 1.8rem;
@@ -134,12 +165,37 @@ body.dark-mode .btn-secondary { color: var(--card-text-dark); border-color: var(
 .menu-item p { font-size: 0.9rem; padding: 0 1rem; color: var(--text-color); }
 
 /* Halaman Kontak */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
 .contact-form { max-width: 600px; margin-top: 2rem; }
-.form-group { margin-bottom: 1.5rem; }
+.form-group { margin-bottom: 1.5rem; position: relative; }
 .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 700; }
-.form-group input, .form-group textarea { width: 100%; padding: 0.8rem; border: 1px solid var(--border-color); border-radius: 5px; font-family: 'Lato', sans-serif; background-color: var(--bg-color); color: var(--text-color); }
+.form-group input, .form-group textarea { 
+    width: 100%; 
+    padding: 0.8rem; 
+    border: 1px solid var(--border-color); 
+    border-radius: 5px; 
+    font-family: 'Lato', sans-serif; 
+    background-color: var(--bg-color); 
+    color: var(--text-color);
+    transition: border-color 0.3s ease;
+}
+.form-group input.error, .form-group textarea.error {
+    border-color: var(--error-color);
+}
 .form-group textarea { resize: vertical; min-height: 120px; }
-.error-message { color: var(--error-color); font-size: 0.8rem; margin-top: 0.25rem; display: none; }
+.error-message { 
+    color: var(--error-color); 
+    font-size: 0.8rem; 
+    margin-top: 0.25rem; 
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
 #form-success-message { color: var(--card-text-dark); font-weight: bold; text-align: center; padding: 1rem; background-color: var(--success-bg); border-radius: 5px; display: none; margin-top: 1rem; }
 .btn-submit { padding: 0.7rem 2rem; border-radius: 50px; font-weight: 700; font-size: 14px; text-align: center; transition: all 0.3s ease; border: 1px solid; cursor: pointer; background-color: var(--active-color); color: var(--header-bg); border-color: var(--active-color); }
 .btn-submit:hover { opacity: 0.8; }
@@ -149,7 +205,8 @@ body.dark-mode .btn-secondary { color: var(--card-text-dark); border-color: var(
 .main-footer-layout { background-color: var(--header-bg); padding: 3rem 2rem 2rem; border-top: 1px solid var(--border-color); transition: background-color 0.3s, border-top 0.3s; }
 .footer-social { text-align: left; padding-bottom: 2rem; max-width: 1400px; margin: 0 auto; }
 .footer-social a { margin-right: 1.5rem; display: inline-block; }
-.footer-social img { width: 30px; height: 30px; filter: var(--icon-fill) == #fff ? invert(1) : none; transition: filter 0.3s ease; }
+.footer-social img { width: 30px; height: 30px; transition: filter 0.3s ease; }
+body.dark-mode .footer-social img { filter: invert(1); }
 .footer-social a:hover img { filter: invert(38%) sepia(98%) saturate(1015%) hue-rotate(124deg) brightness(94%) contrast(101%); /* Mengubah warna menjadi var(--active-color) */ }
 .footer-legal { text-align: left; color: rgba(128, 128, 128, 0.8); font-size: 0.9rem; max-width: 1400px; margin: 0 auto; padding-top: 2rem; border-top: 1px solid var(--border-color); transition: border-top 0.3s; }
 
