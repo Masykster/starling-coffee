@@ -81,17 +81,121 @@ document.addEventListener('DOMContentLoaded', () => {
         startAutoPlay();
     }
 
-    // 2. Validasi Form (hanya untuk contact.html)
+    // 2. Search Functionality (hanya untuk menu.html)
+    const menuSearch = document.getElementById('menuSearch');
+    if (menuSearch) {
+        const menuItems = document.querySelectorAll('.menu-item');
+        
+        menuSearch.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase().trim();
+            
+            menuItems.forEach(item => {
+                const title = item.querySelector('h3').textContent.toLowerCase();
+                const description = item.querySelector('p').textContent.toLowerCase();
+                
+                if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+        });
+    }
+
+    // 3. Validasi Form (hanya untuk contact.html)
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const messageInput = document.getElementById('message');
+        const successMessage = document.getElementById('form-success-message');
+        
+        // Function untuk validasi email
+        const isValidEmail = (email) => {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        };
+
+        // Function untuk menampilkan error dengan animasi
+        const showError = (input, message) => {
+            const errorElement = document.getElementById(`${input.id}-error`);
+            errorElement.textContent = message;
+            
+            // Trigger reflow untuk animasi
+            errorElement.style.display = 'block';
+            errorElement.offsetHeight;
+            
+            // Tambahkan class untuk animasi
+            errorElement.classList.add('visible');
+            input.classList.add('error');
+            
+            // Animasi shake pada input
+            input.style.animation = 'shake 0.5s';
+            input.addEventListener('animationend', () => {
+                input.style.animation = '';
+            }, {once: true});
+        };
+
+        // Function untuk menyembunyikan error dengan animasi
+        const hideError = (input) => {
+            const errorElement = document.getElementById(`${input.id}-error`);
+            errorElement.classList.remove('visible');
+            input.classList.remove('error');
+            
+            // Tunggu animasi selesai baru sembunyikan element
+            setTimeout(() => {
+                if (!errorElement.classList.contains('visible')) {
+                    errorElement.style.display = 'none';
+                }
+            }, 300);
+        };
+
+        // Event listeners untuk input fields
+        [nameInput, emailInput, messageInput].forEach(input => {
+            input.addEventListener('input', () => {
+                hideError(input);
+                successMessage.style.display = 'none';
+            });
+        });
+
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            // Logika validasi form Anda ada di sini...
-            // (Saya akan menyalinnya dari contact.html)
-            console.log("Form submitted!");
-            // Tampilkan pesan sukses dan reset form
-            document.getElementById('form-success-message').style.display = 'block';
-            contactForm.reset();
+            let isValid = true;
+
+            // Validasi nama
+            if (!nameInput.value.trim()) {
+                showError(nameInput, 'Nama tidak boleh kosong.');
+                isValid = false;
+            }
+
+            // Validasi email
+            if (!emailInput.value.trim()) {
+                showError(emailInput, 'Email tidak boleh kosong.');
+                isValid = false;
+            } else if (!isValidEmail(emailInput.value.trim())) {
+                showError(emailInput, 'Format email tidak valid.');
+                isValid = false;
+            }
+
+            // Validasi pesan
+            if (!messageInput.value.trim()) {
+                showError(messageInput, 'Pesan tidak boleh kosong.');
+                isValid = false;
+            }
+
+            // Jika semua validasi sukses
+            if (isValid) {
+                successMessage.style.display = 'block';
+                successMessage.offsetHeight; // Trigger reflow
+                successMessage.classList.add('visible');
+                successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                
+                // Reset form setelah delay singkat
+                setTimeout(() => {
+                    contactForm.reset();
+                    // Reset semua error messages
+                    [nameInput, emailInput, messageInput].forEach(hideError);
+                }, 100);
+            }
         });
     }
 });
